@@ -1,6 +1,43 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+#Frogger#
+
+##Por: Rodrigo Montebello Saboya Brito##
+
+###Instalação:###
+
+	**Basta executar o arquivo com um browser.**
+
+###O jogo:###
+
+	####Comandos:### As 'setas' controlam o jogador.
+		´´´
+			Seta Up: para cima.
+			Seta Down: para baixo.
+			Seta Right: para direita.
+			Seta Left: para esquerda.
+		´´´
+	###Objetivo:###
+		** Atravessar a rua!** Assim você sobe de nível ao final de cada travessia.
+
+	###Dificuldade:###
+		A dificuldade cresce conforme você passa de nível a um fator de "1" por nível. Adiciona um inseto.
+	
+	##Pontuação:###
+		A cada nível seus **pontos** serão acressidos de "1".
+
+	##Vitória:##
+		Atualmente o jogo possui 11 níveis com 10 tipos de dificuldade.
+	
+	##Derrota:##
+		Você tem 5 tentativas a cada colisão você perde uma vida e volta a posição ínicial.
+
+###Estória:###
+	O pequeno Jhon queria atravessar a rua e tinha um monte de insetos que queriam atrapalhar sua vida! 
+	Ajude o pequeno Jhon a atravessar!
+
+###Agradecimentos:###
+	A comunidade online JavaScript e aos colegas das turmas Udacity por resolver muitas de minhas duvidas
+	e me ajudar a melhorar e aprimorar meu código.  
