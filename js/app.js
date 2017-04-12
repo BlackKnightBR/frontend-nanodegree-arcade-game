@@ -146,7 +146,7 @@ var player = new Player(202.5, 383, 50);
 var score = 0;
 var gameLevel = 1;
 var scoreLevelDiv = document.createElement('div');
-var enemy = new Enemy(0, Math.random() * 184 + 50, Math.random() * 256);
+var enemy = new Enemy(0, Math.random() * 180 + 50, Math.random() * 250);
 
 allEnemies.push(enemy);
 
