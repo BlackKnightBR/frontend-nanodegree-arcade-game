@@ -45,9 +45,17 @@ var Engine = (function(global) {
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
          */
-        update(dt);
-        render();
 
+         //Verifica se o jogo já alcançou o nível máximo ou seo jogador perdeu suas vidas
+         // e para de redesenhar o jogo.
+         if(gameLevel < maxLevel && lifes > 0){
+           update(dt);
+           render();
+         }else if(lifes === 0){
+           player.lose();
+         } else{
+           player.win();
+         }
         /* Set our lastTime variable which is used to determine the time delta
          * for the next time this function is called.
          */
@@ -80,7 +88,6 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -159,7 +166,6 @@ var Engine = (function(global) {
      * those sorts of things. It's only called once by the init() method.
      */
     function reset() {
-        // noop
     }
 
     /* Go ahead and load all of the images we know we're going to need to
@@ -171,7 +177,8 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        'images/char-boy-lose.png'
     ]);
     Resources.onReady(init);
 
