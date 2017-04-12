@@ -24,7 +24,7 @@ Enemy.prototype.update = function(dt) {
         this.x = 0;
     }
 
-    // Check for collision with enemies or barrier-walls
+    // Verifica colisões com as laterais ou com inimigos.
     checkCollision(this);
 };
 
@@ -70,6 +70,20 @@ Player.prototype.handleInput = function(keyPress) {
     console.log('Tecla pressionada: ' + keyPress);
 };
 
+//Função que desenha o final do jogo ao alcançar o maxLevel.
+Player.prototype.win = function(){
+  console.log("Game Over!");
+  scoreLevelDiv.innerHTML = 'Você venceu o jogo!';
+  document.body.insertBefore(scoreLevelDiv, firstCanvasTag[0]);
+};
+
+//Função que desenha quando o jogador perde suas vidas.
+Player.prototype.lose = function(){
+  console.log("Game Over!");
+  scoreLevelDiv.innerHTML = 'Você perdeu, suas vidas acabaram!';
+  document.body.insertBefore(scoreLevelDiv, firstCanvasTag[0]);
+}
+
 // Função que exibe a pontuação
 var displayScoreLevel = function(aScore, aLevel) {
     var canvas = document.getElementsByTagName('canvas');
@@ -77,7 +91,7 @@ var displayScoreLevel = function(aScore, aLevel) {
 
     // Adiciona o score e o nivel.
     scoreLevelDiv.innerHTML = 'Pontos: ' + aScore
-        + ' / ' + 'Nível: ' + aLevel;
+        + ' / ' + 'Nível: ' + aLevel + ' / ' + 'Vidas: ' + lifes;
     document.body.insertBefore(scoreLevelDiv, firstCanvasTag[0]);
 };
 
@@ -88,7 +102,8 @@ var checkCollision = function(anEnemy) {
         && player.x + 25 <= anEnemy.x + 88
         && player.y + 73 <= anEnemy.y + 135
         && player.x + 76 >= anEnemy.x + 11) {
-        console.log('Perdeu');
+        console.log('Perdeu, vidas: ' + lifes + '.');
+        lifes--;
         player.x = 202.5;
         player.y = 383;
     }
@@ -145,6 +160,8 @@ var allEnemies = [];
 var player = new Player(202.5, 383, 50);
 var score = 0;
 var gameLevel = 1;
+var maxLevel = 12;
+var lifes = 5;
 var scoreLevelDiv = document.createElement('div');
 var enemy = new Enemy(0, Math.random() * 180 + 50, Math.random() * 250);
 
