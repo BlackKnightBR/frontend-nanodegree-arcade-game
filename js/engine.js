@@ -40,22 +40,22 @@ var Engine = (function(global) {
          * computer is) - hurray time!
          */
         var now = Date.now(),
-            dt = (now - lastTime) / 1000.0;
+        dt = (now - lastTime) / 1000.0;
 
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
          */
 
-         //Verifica se o jogo já alcançou o nível máximo ou seo jogador perdeu suas vidas
-         // e para de redesenhar o jogo.
-         if(gameLevel < maxLevel && lifes > 0){
-           update(dt);
-           render();
-         }else if(lifes === 0){
-           player.lose();
-         } else{
-           player.win();
-         }
+        //Verifica se o jogo já alcançou o nível máximo ou seo jogador perdeu suas vidas
+        // e para de redesenhar o jogo.
+        if(gameLevel < maxLevel && lifes > 0){
+          update(dt);
+          render();
+        }else if(lifes === 0){
+          player.lose();
+        }else{
+          player.win();
+        }
         /* Set our lastTime variable which is used to determine the time delta
          * for the next time this function is called.
          */

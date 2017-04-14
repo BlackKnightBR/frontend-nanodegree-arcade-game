@@ -6,38 +6,38 @@ frontend-nanodegree-arcade-game
 
 ##Por: Rodrigo Montebello Saboya Brito##
 
-###Instalação:###
+###Instalaï¿½ï¿½o:###
 
-	**Basta executar o arquivo com um browser.**
+	**Basta executar o arquivo "index.html" com um browser.**
 
 ###O jogo:###
 
 	####Comandos:### As 'setas' controlam o jogador.
-		´´´
+		ï¿½ï¿½ï¿½
 			Seta Up: para cima.
 			Seta Down: para baixo.
 			Seta Right: para direita.
 			Seta Left: para esquerda.
-		´´´
+		ï¿½ï¿½ï¿½
 	###Objetivo:###
-		** Atravessar a rua!** Assim você sobe de nível ao final de cada travessia.
+		** Atravessar a rua!** Assim vocï¿½ sobe de nï¿½vel ao final de cada travessia.
 
 	###Dificuldade:###
-		A dificuldade cresce conforme você passa de nível a um fator de "1" por nível. Adiciona um inseto.
-	
-	##Pontuação:###
-		A cada nível seus **pontos** serão acressidos de "1".
+		A dificuldade cresce conforme vocï¿½ passa de nï¿½vel a um fator de "1" por nï¿½vel. Adiciona um inseto.
 
-	##Vitória:##
-		Atualmente o jogo possui 11 níveis com 10 tipos de dificuldade.
-	
+	##Pontuaï¿½ï¿½o:###
+		A cada nï¿½vel seus **pontos** serï¿½o acressidos de "1".
+
+	##Vitï¿½ria:##
+		Atualmente o jogo possui 11 nï¿½veis com 10 tipos de dificuldade.
+
 	##Derrota:##
-		Você tem 5 tentativas a cada colisão você perde uma vida e volta a posição ínicial.
+		Vocï¿½ tem 5 tentativas a cada colisï¿½o vocï¿½ perde uma vida e volta a posiï¿½ï¿½o ï¿½nicial.
 
-###Estória:###
-	O pequeno Jhon queria atravessar a rua e tinha um monte de insetos que queriam atrapalhar sua vida! 
+###Estï¿½ria:###
+	O pequeno Jhon queria atravessar a rua e tinha um monte de insetos que queriam atrapalhar sua vida!
 	Ajude o pequeno Jhon a atravessar!
 
 ###Agradecimentos:###
 	A comunidade online JavaScript e aos colegas das turmas Udacity por resolver muitas de minhas duvidas
-	e me ajudar a melhorar e aprimorar meu código.  
+	e me ajudar a melhorar e aprimorar meu cï¿½digo.  

@@ -1,4 +1,10 @@
+'use strict';
 // Enemies our player must avoid
+
+var enemyCanvasLimitsLeft = 505;
+var inicialPosX = 202.5;
+var inicialPosY = 383;
+
 var Enemy = function(x, y, speed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
@@ -20,8 +26,8 @@ Enemy.prototype.update = function(dt) {
     this.x += this.speed * dt;
 
     // make enemies loop to left side of canvas after reaching canvas.width
-    if (this.x >= 505) {
-        this.x = 0;
+    if (this.x >= enemyCanvasLimitsLeft) {
+        this.x = -200;
     }
 
     // Verifica colisões com as laterais ou com inimigos.
@@ -51,21 +57,20 @@ Player.prototype.update = function() {
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     displayScoreLevel(score, gameLevel);
-
 };
 
 Player.prototype.handleInput = function(keyPress) {
     if (keyPress == 'left') {
-        player.x -= player.speed;
+        this.x -= this.speed;
     }
     if (keyPress == 'up') {
-        player.y -= player.speed - 20;
+        this.y -= this.speed - 20;
     }
     if (keyPress == 'right') {
-        player.x += player.speed;
+        this.x += this.speed;
     }
     if (keyPress == 'down') {
-        player.y += player.speed - 20;
+        this.y += this.speed - 20;
     }
     console.log('Tecla pressionada: ' + keyPress);
 };
@@ -83,6 +88,7 @@ Player.prototype.lose = function(){
   scoreLevelDiv.innerHTML = 'Você perdeu, suas vidas acabaram!';
   document.body.insertBefore(scoreLevelDiv, firstCanvasTag[0]);
 }
+
 
 // Função que exibe a pontuação
 var displayScoreLevel = function(aScore, aLevel) {
@@ -104,15 +110,15 @@ var checkCollision = function(anEnemy) {
         && player.x + 76 >= anEnemy.x + 11) {
         console.log('Perdeu, vidas: ' + lifes + '.');
         lifes--;
-        player.x = 202.5;
-        player.y = 383;
+        player.x = inicialPosX;
+        player.y = inicialPosY;
     }
 
     // Detecta se o jogador atravessou a rua, aumenta a pontuação e
     // a dificuldade baseados no score.
     if (player.y + 63 <= 0) {
-        player.x = 202.5;
-        player.y = 383;
+        player.x = inicialPosX;
+        player.y = inicialPosY;
         console.log('Você venceu!');
 
         ctx.fillStyle = 'white';
@@ -126,14 +132,16 @@ var checkCollision = function(anEnemy) {
     }
 
     // Delimita o espaço do jogador dentro da canvas.
-    if (player.y > 383 ) {
-        player.y = 383;
+    var limitsX = [402.5,2.5];
+
+    if (player.y > inicialPosY ) {
+        player.y = inicialPosY;
     }
-    if (player.x > 402.5) {
-        player.x = 402.5;
+    if (player.x > limitsX[0]) {
+        player.x = limitsX[0];
     }
-    if (player.x < 2.5) {
-        player.x = 2.5;
+    if (player.x < limitsX[1]) {
+        player.x = limitsX[1];
     }
 };
 
@@ -157,7 +165,7 @@ var increaseDifficulty = function(numEnemies) {
 // Declare new score and gameLevel variables to store score and level
 
 var allEnemies = [];
-var player = new Player(202.5, 383, 50);
+var player = new Player(inicialPosX, inicialPosY, 50);
 var score = 0;
 var gameLevel = 1;
 var maxLevel = 12;
